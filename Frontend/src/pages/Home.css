@@ -1,0 +1,370 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+    --accent-color: #E74C3C;
+    --text-light: #ECF0F1;
+    --text-dark: #2C3E50;
+    --background-light: #F8F9FA;
+    --success-color: #27AE60;
+    --warning-color: #F39C12;
+    --gradient-primary: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+    --gradient-accent: linear-gradient(135deg, #E74C3C 0%, #F39C12 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(231, 76, 60, 0.8) 0%, rgba(52, 152, 219, 0.8) 100%);
+}
+
+/* Main container for the home section */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--background-light);
+}
+
+/* Hero Section Styling */
+.hero-section {
+    height: 60vh;
+    background: url('https://www.epo.org/sites/default/files/styles/ratio_16_9/public/2023-05/AdobeStock_266056885_new_1920x1080.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-hero);
+    z-index: 1;
+}
+
+.hero-section .overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--text-light);
+    padding: 20px;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: slideInDown 1s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-button {
+    text-decoration: none;
+    text-align: center;
+    background: var(--text-light);
+    border-radius: 30px;
+    display: inline-block;
+    padding: 15px 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+.hero-button .btn-text {
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: var(--gradient-accent);
+}
+
+.hero-button:hover .btn-text {
+    color: var(--text-light);
+    animation: none;
+}
+
+/* Content Section */
+.content-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--background-light);
+}
+
+.content-text {
+    width: 70%;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+.content-text h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.content-text h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+
+.content-text p {
+    color: var(--text-dark);
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.content-section h5 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: 40px 0 20px;
+    color: var(--primary-color);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Grid layout for images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.grid-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.grid-image:hover {
+    transform: scale(1.03);
+}
+
+/* Text styling for fake and original */
+.fake {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: 10px;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.original {
+    color: var(--success-color);
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: 10px;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+    }
+
+    .content-text {
+        width: 90%;
+    }
+
+    .content-text h1 {
+        font-size: 2.2em;
+    }
+
+    .content-section h5 {
+        font-size: 1.5em;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Dangers Section Styling */
+.dangers-section {
+    margin-top: 60px;
+    padding: 40px 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.dangers-section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.dangers-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+
+.dangers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.danger-card {
+    background: var(--text-light);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.danger-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.danger-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.danger-card:hover::before {
+    transform: scaleX(1);
+}
+
+.danger-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.danger-card p {
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Animation for cards */
+.danger-card:nth-child(1) { animation: fadeInUp 0.8s ease-out; }
+.danger-card:nth-child(2) { animation: fadeInUp 1s ease-out; }
+.danger-card:nth-child(3) { animation: fadeInUp 1.2s ease-out; }
+.danger-card:nth-child(4) { animation: fadeInUp 1.4s ease-out; }
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .dangers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dangers-section h2 {
+        font-size: 2em;
+    }
+
+    .danger-card {
+        padding: 20px;
+    }
+}
