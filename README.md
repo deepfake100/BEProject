@@ -8,6 +8,7 @@ Python
 -> pip install <python_dependency_name>
 
 Put this model in following Path 
+https://drive.google.com/file/d/1KloXPLQG8dq5oA5YQVkTlpNQDzdEWmn9/view?usp=drive_link
 BEProject->Backend-> service
 
 Steps For Running -> 
